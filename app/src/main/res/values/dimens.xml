@@ -2,4 +2,11 @@
 <resources>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="startViewMargin">10dp</dimen>
+    <dimen name="leftViewMargin">10dp</dimen>
+    <dimen name="topViewMargin">10dp</dimen>
+    <dimen name="displayLeftViewMargin">8dp</dimen>
+    <dimen name="displayStartViewMargin">8dp</dimen>
+    <dimen name="displayTopViewMargin">10dp</dimen>
+    <dimen name="displayRightPadding">10dp</dimen>
 </resources>

@@ -60,10 +60,10 @@
                 android:id="@+id/description_tv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:paddingRight="10dp"
+                android:layout_marginLeft="@dimen/leftViewMargin"
+                android:layout_marginStart="@dimen/startViewMargin"
+                android:layout_marginTop="@dimen/topViewMargin"
+                android:paddingRight="@dimen/displayRightPadding"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView4" />
 

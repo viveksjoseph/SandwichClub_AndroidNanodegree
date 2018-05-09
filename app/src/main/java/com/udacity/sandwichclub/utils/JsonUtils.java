@@ -13,6 +13,14 @@ import java.util.List;
 
 public class JsonUtils {
 
+    public static final String NAME = "name";
+    public static final String MAIN_NAME = "mainName";
+    public static final String ALSO_KNOWN_AS = "alsoKnownAs";
+    public static final String PLACE_OF_ORIGIN = "placeOfOrigin";
+    public static final String DESCRIPTION = "description";
+    public static final String IMAGE = "image";
+    public static final String INGREDIENTS = "ingredients";
+
     public static Sandwich parseSandwichJson(String json) {
 
         String mainName;
@@ -28,22 +36,22 @@ public class JsonUtils {
             JSONObject parsedData = new JSONObject(json);
 
             //parsing data inside name object
-            JSONObject nameObject = parsedData.getJSONObject("name");
+            JSONObject nameObject = parsedData.getJSONObject(NAME);
 
-            mainName = nameObject.getString("mainName");
+            mainName = nameObject.getString(MAIN_NAME);
 
-            JSONArray tempAkaArray = nameObject.getJSONArray("alsoKnownAs");
+            JSONArray tempAkaArray = nameObject.getJSONArray(ALSO_KNOWN_AS);
             alsoKnownAs = new ArrayList<>();  //initialising alsoKnownAs list
             for (int pos = 0; pos < tempAkaArray.length(); pos++) {
                 alsoKnownAs.add(tempAkaArray.get(pos).toString());
             }
 
-            placeOfOrigin = parsedData.getString("placeOfOrigin");
-            description = parsedData.getString("description");
-            image = parsedData.getString("image");
+            placeOfOrigin = parsedData.getString(PLACE_OF_ORIGIN);
+            description = parsedData.getString(DESCRIPTION);
+            image = parsedData.getString(IMAGE);
 
             ingredients = new ArrayList<>();
-            JSONArray tempIngredientsArray = parsedData.getJSONArray("ingredients");
+            JSONArray tempIngredientsArray = parsedData.getJSONArray(INGREDIENTS);
             for (int pos = 0; pos < tempIngredientsArray.length(); pos++) {
                 ingredients.add(tempIngredientsArray.get(pos).toString());
             }
@@ -51,7 +59,7 @@ public class JsonUtils {
             //creating a new sandwich object with parsed data
             sandwichData = new Sandwich(mainName, alsoKnownAs, placeOfOrigin, description, image, ingredients);
 
-        }catch (JSONException e){
+        } catch(JSONException e) {
             Log.d("JSONUtils", "Exception while parsing JSON : " + e.getMessage());
         }
 

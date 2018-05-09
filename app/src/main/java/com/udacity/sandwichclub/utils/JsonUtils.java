@@ -30,9 +30,9 @@ public class JsonUtils {
         String image;
         List<String> ingredients = null;
 
-        Sandwich sandwichData= null;
+        Sandwich sandwichData = null;
 
-        try{
+        try {
             JSONObject parsedData = new JSONObject(json);
 
             //parsing data inside name object
@@ -59,7 +59,7 @@ public class JsonUtils {
             //creating a new sandwich object with parsed data
             sandwichData = new Sandwich(mainName, alsoKnownAs, placeOfOrigin, description, image, ingredients);
 
-        } catch(JSONException e) {
+        } catch (JSONException e) {
             Log.d("JSONUtils", "Exception while parsing JSON : " + e.getMessage());
         }
 
